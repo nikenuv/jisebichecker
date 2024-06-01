@@ -1,0 +1,16 @@
+<testsuite name="features.3_editprofile.Edit Profile" tests="1" errors="0" failures="0" skipped="0" time="3.356785" timestamp="2024-01-05T22:48:08.713247" hostname="Ammar-Qorni"><testcase classname="features.3_editprofile.Edit Profile" name="Already Logged In" status="passed" time="3.356785"><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Already Logged In
+    Given i am on Logged In Homepage ... passed in 2.830s
+    When i press User Profile button ... passed in 0.231s
+    And i press Edit Profile button ... passed in 0.097s
+    Then i should be on Edit Profile Page ... passed in 0.008s
+    When I enter a new email and username in the Edit Profile fields ... passed in 0.149s
+    And i press Save button ... passed in 0.032s
+    Then i should be on Edit Profile Page ... passed in 0.010s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase></testsuite>

@@ -1,0 +1,34 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(to left, #002D7B, #0053D9);
+}
+
+.custom-text-color {
+    color: #0063FF !important; /* Use !important to override Bootstrap styles if needed */
+    font-family: 'Inter', sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+    word-wrap: break-word
+}
+
+.custom-text{
+    font-size: 44px;
+}
+
+.search-box {
+    padding: 8px 16px;
+    border: 1px solid #0053D9;
+    border-radius: 40px;
+    width: 500px;
+}
+
+.search-icon{
+    justify-content: start;
+    align-items: start;
+}
+
+.search-input input{
+    border: none;
+    outline: none;
+    width: 425px;
+}

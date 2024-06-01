@@ -1,0 +1,25 @@
+<testsuite name="features.4_upload.Upload Manuscript" tests="2" errors="0" failures="0" skipped="0" time="8.134506" timestamp="2024-01-05T22:48:21.034542" hostname="Ammar-Qorni"><testcase classname="features.4_upload.Upload Manuscript" name="Upload Manuscript Success" status="passed" time="4.959821"><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Upload Manuscript Success
+    Given I am on Upload Manuscript Page ... passed in 3.030s
+    When I upload .docx Manuscript file on Upload field ... passed in 0.031s
+    And I press Check Now! button ... passed in 1.886s
+    Then I should be on Report Page ... passed in 0.013s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="features.4_upload.Upload Manuscript" name="Wrong Uploaded File Type" status="passed" time="3.174685"><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Wrong Uploaded File Type
+    Given I am on Upload Manuscript Page ... passed in 3.067s
+    When I upload .pdf Manuscript file on Upload field ... passed in 0.043s
+    And I press Check Now! button ... passed in 0.065s
+    Then I should be on Upload Manuscript Page ... passed in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase></testsuite>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="shortcut icon" href="/static/base/images/favicon.ico">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>View Profile</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/static/base/styles/view_profile.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    />
+    <style>
+      .navbar {
+        box-shadow: 0 5px 35px rgba(0, 0, 0, 0.25);
+        color: #1D68A8;
+      }
+    </style>
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-lg bg-white">
+        <div class="container-fluid">
+            <a href="javascript:void(0);" onclick="goBack()"
+                class="d-flex justify-content-center align-items-center text-decoration-none" style="margin-left:50px">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="27" viewBox="0 0 52 54" fill="none">
+                    <path
+                        d="M43.3334 24.7102H16.965L29.0767 12.153L26 8.9856L8.66669 26.9566L26 44.9276L29.055 41.7602L16.965 29.203H43.3334V24.7102Z"
+                        fill="#0063FF" />
+                </svg>  
+                <span class="navbar-brand" style="margin-left:10px;font-weight: 800;color: #0063FF;">Profile</span>
+            </a>
+        </div>
+    </nav>    
+    
+    <div class="position-absolute z-1 start-50 translate-middle-x p-5">
+      <svg
+        width="200"
+        height="200"
+        viewBox="0 0 255 255"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle cx="126.957" cy="128.043" r="117.191" fill="#014FCF" />
+        <g clip-path="url(#clip0_0_17)">
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M127.5 21.25C68.8181 21.25 21.25 68.8181 21.25 127.5C21.25 186.182 68.8181 233.75 127.5 233.75C186.182 233.75 233.75 186.182 233.75 127.5C233.75 68.8181 186.182 21.25 127.5 21.25ZM90.3125 100.938C90.3125 96.054 91.2744 91.2183 93.1432 86.7065C95.0121 82.1947 97.7513 78.0951 101.204 74.642C104.658 71.1888 108.757 68.4496 113.269 66.5807C117.781 64.7119 122.616 63.75 127.5 63.75C132.384 63.75 137.219 64.7119 141.731 66.5807C146.243 68.4496 150.342 71.1888 153.796 74.642C157.249 78.0951 159.988 82.1947 161.857 86.7065C163.726 91.2183 164.688 96.054 164.688 100.938C164.687 110.8 160.77 120.259 153.796 127.233C146.822 134.207 137.363 138.125 127.5 138.125C117.637 138.125 108.178 134.207 101.204 127.233C94.2305 120.259 90.3125 110.8 90.3125 100.938ZM193.991 180.455C186.038 190.46 175.927 198.538 164.413 204.087C152.899 209.636 140.281 212.512 127.5 212.5C114.719 212.512 102.101 209.636 90.5869 204.087C79.0734 198.538 68.9622 190.46 61.0088 180.455C78.2319 168.098 101.734 159.375 127.5 159.375C153.266 159.375 176.768 168.098 193.991 180.455Z"
+            fill="white"
+          />
+        </g>
+        <defs>
+          <clipPath id="clip0_0_17">
+            <rect width="255" height="255" fill="white" />
+          </clipPath>
+        </defs>
+      </svg>
+    </div>
+
+    <div
+      class="position-relative custom-container mx-auto bg-white text-center rounded-2 z-0"
+    >
+      <p class="custom-user m-0">{{ username }}</p>
+      <p class="custom-email my-5">{{ email }}</p>
+      <a id="edit-profile" href="{% url 'editProfile' %}">
+        <button type="button" class="custom-button rounded-3" onclick="editProfile()">
+          Edit Profile
+        </button>
+        <button
+          type="button"
+          class="custom-button rounded-3"
+          onclick="logout()"
+        >
+          Logout
+        </button>
+      </a>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      function logout() {
+        // Redirect to the logout URL
+        window.location.href = "{% url 'logout' %}";
+      }
+
+      function editProfile() {
+        window.location.href = "{% url 'editProfile' %}";
+      }
+
+      function goBack() {
+        window.location.href = "{% url 'loggedHomepage' %}";    
+      }
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,113 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: linear-gradient(to right, #0053D9, #002D7B);
+    color: white;
+    font-family: 'Inter', sans-serif;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('path/to/inter-regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('path/to/poppins-regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('path/to/poppins-medium.woff2') format('woff2');
+    font-weight: 500; /* Menggunakan font Poppins Medium dengan font-weight 500 */
+    font-style: normal;
+}
+
+.navbar-brand {
+    font-family: 'Inter', sans-serif;
+    margin-left: 50px;
+    font-weight: bold;
+    color: #1D68A8;
+}
+
+.user-text {
+    font-family: 'Inter', sans-serif;
+    margin-right: 20px;
+    color: #1D68A8;
+}
+
+.fas {
+    margin-right: 50px;
+    color: #1D68A8;
+}
+
+.title-container {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 53px;
+    margin-top: 72px;
+    margin-left: 60px;
+    color: #F1C40A;
+}
+
+.content-container {
+    font-family: 'Poppins', sans-serif;
+    margin-top: 35px;
+    margin-left: 62px;
+    color: #ffffff;
+    font-weight: 500;
+    display: flex;
+}
+
+.content-container img {
+    float: right; 
+    position: absolute; 
+    right: 150px;
+    top: 160px; 
+    z-index: 100;
+   
+}
+
+.button.start {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    margin-top: 35px;
+    margin-left: 62px;
+    width: 180px; /* Sesuaikan dengan ukuran yang Anda inginkan */
+    height: 53px; /* Sesuaikan dengan ukuran yang Anda inginkan */
+    background-color: #ffffff; /* Ganti dengan warna yang Anda inginkan */
+    border: none;
+    border-radius: 10px; /* Sesuaikan dengan radius yang Anda inginkan */
+    color: #1D68A8;; /* Ganti dengan warna teks yang sesuai */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25)
+}
+
+/* CSS responsif untuk mengatur tampilan pada layar dengan lebar maksimal 768px */
+@media (max-width: 768px) {
+    .title-container {
+        text-align: center; /* Pusatkan teks pada layar kecil */
+    }
+    .content-container {
+        text-align: center; /* Pusatkan teks pada layar kecil */
+    }
+    .button.start {
+        display: block;
+        margin: 20px auto; /* Tengahkan tombol pada layar kecil */
+    }
+    .image {
+        text-align: center; /* Pusatkan gambar pada layar kecil */
+    }
+    /* Atur ukuran gambar sesuai kebutuhan pada layar kecil */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}

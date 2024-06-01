@@ -1,0 +1,27 @@
+<testsuite name="features.signin.Sign in" tests="2" errors="0" failures="0" skipped="0" time="5.463693" timestamp="2024-01-05T22:44:38.658083" hostname="Ammar-Qorni"><testcase classname="features.signin.Sign in" name="Account doesn't exist" status="passed" time="2.436814"><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Account doesn't exist
+    Given i am on Sign In Page ... passed in 1.751s
+    When I fill in "username" wih new username "testing_new" ... passed in 0.083s
+    And I fill in "password" wih "88888888" ... passed in 0.050s
+    And i press login button ... passed in 0.548s
+    Then the response should contain Invalid Credentials ... passed in 0.005s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="features.signin.Sign in" name="Sign In Success" status="passed" time="3.026879"><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Sign In Success
+    Given i am on Sign In Page ... passed in 1.931s
+    When I fill in "username" wih existing username "testing" ... passed in 0.084s
+    And I fill in "password" wih "88888888" ... passed in 0.059s
+    And i press Login button ... passed in 0.911s
+    Then i should be on Homepage ... passed in 0.041s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase></testsuite>

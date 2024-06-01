@@ -1,0 +1,12 @@
+<testsuite name="features.download.Download Report" tests="1" errors="0" failures="0" skipped="0" time="7.066658" timestamp="2024-01-05T22:44:00.979674" hostname="Ammar-Qorni"><testcase classname="features.download.Download Report" name="Successfully Checked Manuscript" status="passed" time="7.066658"><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Successfully Checked Manuscript
+    Given I am on Report Checked Manuscript Page ... passed in 1.970s
+    When I press Download button ... passed in 5.097s
+    Then the report file should be downloaded successfully ... passed in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase></testsuite>

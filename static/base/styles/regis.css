@@ -1,0 +1,120 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: linear-gradient(to right, #0053D9, #002D7B);
+    color: white;
+    font-family: 'Inter', sans-serif;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('path/to/inter-regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('path/to/poppins-regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('path/to/poppins-medium.woff2') format('woff2');
+    font-weight: 500; /* Menggunakan font Poppins Medium dengan font-weight 500 */
+    font-style: normal;
+}
+
+.navbar{
+    background-color: #1B0F4E;
+}
+.navbar-brand {
+    font-family: 'Inter', sans-serif;
+    margin-left: 50px;
+    font-weight: bold;
+    color: #1D68A8;
+}
+
+.navbar-brand i {
+    margin-right: 15px; /* Menambahkan jarak antara ikon dan teks */
+    color: white;
+}
+
+
+.fas {
+    margin-right: 50px;
+    color: 1B0F4E;
+}
+
+.title-container {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 40px;
+    margin-top: 20px;
+    margin-bottom: 0;
+    margin-left: 0px;
+    color: #0063FF;
+    text-align: center;
+}
+
+.content-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 125px;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.form-box {
+    text-align: center;
+    width: 500px;
+    height: 450px;
+    padding: 0px;
+    background-color: #E6ECF8;
+    border-radius: 10px;
+    align-items: center;
+    margin: 0 auto; /* Mengatur horizontal margin ke auto untuk pemosisian di tengah */
+}
+
+.form-control{
+    width: 80%;
+    margin-left: 50px;
+}
+
+.input-group{
+    margin: 0;
+}
+
+.input-field {
+    margin-bottom: 20px; 
+    text-align: left;
+}
+
+.input-field:first-child {
+    margin-bottom: 30px; 
+}
+
+
+.button.start {
+    display: block;
+    margin: auto;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 80%; /* Sesuaikan dengan ukuran yang Anda inginkan */
+    height: 53px; /* Sesuaikan dengan ukuran yang Anda inginkan */
+    background-color: #0063FF; /* Ganti dengan warna yang Anda inginkan */
+    border: none;
+    border-radius: 10px; /* Sesuaikan dengan radius yang Anda inginkan */
+    color: #ffffff;; /* Ganti dengan warna teks yang sesuai */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25)
+}

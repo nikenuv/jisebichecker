@@ -1,0 +1,63 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(to left, #002D7B, #0053D9);
+}
+
+.navbar-brand {
+    font-family: 'Inter', sans-serif;
+    margin-left: 50px;
+    font-weight: bold;
+    color: #1D68A8;
+}
+
+.custom-text-color {
+    color: #0063FF !important;
+    /* Use !important to override Bootstrap styles if needed */
+    font-family: 'Inter', sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+    word-wrap: break-word
+}
+
+.custom-container {
+    width: 945px;
+    height: 475px;
+    margin-top: 150px;
+    margin-bottom: 50px;
+    padding-top: 125px;
+}
+
+.custom-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 200px;
+    background-color: #0053D9;
+}
+
+.custom-user {
+    color: #0063FF;
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 77.70px;
+    word-wrap: break-word;
+}
+
+.custom-email {
+    color: #898383;
+    font-size: 25px;
+    font-weight: 500;
+    word-wrap: break-word
+}
+
+.custom-button {
+    background: #0053D9;
+    color: white;
+    font-size: 31px;
+    font-weight: 600;
+    word-wrap: break-word;
+    border: none;
+    text-align: center;
+    width: 250px;
+}

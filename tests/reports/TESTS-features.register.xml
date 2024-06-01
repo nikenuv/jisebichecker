@@ -1,0 +1,48 @@
+<testsuite name="features.register.Registration" tests="3" errors="0" failures="0" skipped="0" time="7.646754" timestamp="2024-01-05T22:44:23.189947" hostname="Ammar-Qorni"><testcase classname="features.register.Registration" name="Password Doesn't Match" status="passed" time="2.057581"><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Password Doesn't Match
+    Given I am on Register Page ... passed in 1.737s
+    When I fill in "email" wih new email "testing@gmail.com" ... passed in 0.081s
+    And I fill in "username" wih new username "testing" ... passed in 0.061s
+    And I fill in "password" wih "88888888" ... passed in 0.048s
+    And I fill in "confirm_password" with "88888889" ... passed in 0.043s
+    And I press Sign Up button ... passed in 0.079s
+    Then the response should contain Password does not match ... passed in 0.003s
+    And I should be on Register Page ... passed in 0.005s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="features.register.Registration" name="Registration Success" status="passed" time="2.663297"><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Registration Success
+    Given I am on Register Page ... passed in 1.758s
+    When I fill in "email" wih new email "testing@gmail.com" ... passed in 0.085s
+    And I fill in "username" wih new username "testing" ... passed in 0.042s
+    And I fill in "password" wih "88888888" ... passed in 0.048s
+    And I fill in "confirm_password" with "88888888" ... passed in 0.056s
+    And I press Sign Up button ... passed in 0.669s
+    Then I should be on SignIn Page ... passed in 0.005s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="features.register.Registration" name="Username already exists" status="passed" time="2.925876"><system-out>
+<![CDATA[
+@scenario.begin
+  Scenario: Username already exists
+    Given I am on Register Page ... passed in 2.533s
+    When I fill in "email" wih new email "testing1@gmail.com" ... passed in 0.099s
+    And I fill in "username" wih existing username "testing" ... passed in 0.057s
+    And I fill in "password" wih "88888888" ... passed in 0.064s
+    And I fill in "confirm_password" with "88888888" ... passed in 0.054s
+    And I press Sign Up button ... passed in 0.083s
+    Then the response should contain Username already exists ... passed in 0.036s
+    And I should be on Register Page ... passed in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase></testsuite>

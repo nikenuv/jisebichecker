@@ -1,0 +1,78 @@
+.navbar-brand {
+            margin-left: 50px;
+            font-weight: bold;
+            color: #1D68A8;
+
+}
+
+.text-blue{
+    color: #002D7B !important;
+}
+
+.custom-signup-button {
+            background-color: #0063FF; /* Ganti dengan kode warna latar belakang yang Anda inginkan */
+            color: white; /* Warna teks pada tombol */
+}
+
+.custom-login-button {
+            color: #0063FF;
+            border-color: #0063FF; /* Warna teks pada tombol */
+}
+
+.btn-outline-success {
+            border-color: #0063FF; /* Warna garis pinggir tombol saat tidak dihover */
+            color: #0063FF; /* Warna teks tombol saat tidak dihover */
+        }
+    
+.btn-outline-success:hover {
+            background-color: #0063FF; /* Warna latar belakang tombol saat dihover */
+            color: white; /* Warna teks tombol saat dihover */
+        }
+    
+html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+}
+          
+body {
+            background: linear-gradient(to right, #0053D9, #002D7B);
+            /* Gunakan linear-gradient untuk latar belakang dengan perubahan warna dari atas ke bawah */
+            color: white;
+        }
+
+.container {
+            margin-top: 72px;
+            margin-left:80px;
+            padding-left: 0px;
+            font-size: 40px;
+            font-weight: bold !important;
+            color: #F1C40A;
+            font-family: 'Poppins', sans-serif;
+        }
+
+.content-container {
+            font-family: 'Poppins', sans-serif;
+            margin-top: 30px;
+            margin-left: 82px;
+            margin-bottom: 20px;
+            color: #ffffff;
+            font-weight: 500; 
+            display: flex;
+        }
+
+.content-container img {
+            float: right; 
+            position: absolute; 
+            right: 150px;
+            top: 160px; 
+            z-index: 100;
+           
+}
+
+.start-button{
+            margin-left: 82px;
+            color: #1D68A8;
+            font-weight:600;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25)
+}

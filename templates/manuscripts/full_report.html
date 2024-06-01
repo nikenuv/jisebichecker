@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="shortcut icon" href="/static/base/images/favicon.ico" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Full Report</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" />
+    <link href="https://fonts.googleapis.com/css?family=Inter" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.19.0/font/bootstrap-icons.css" rel="stylesheet" />
+</head>
+
+<body>
+    <nav class="navbar position-fixed navbar-expand-md bg-light shadow py-1.5 px-3 mb-5 bg-white rounded fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand text-primary" href="{% url 'report' url=file %}" style="
+            font-family: 'Inter', sans-serif;
+            margin-left: 40px;
+            font-weight: 600;
+            color: #1d68a8;
+          ">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-arrow-left" viewBox="0 0 16 16" style="margin-right: 10px">
+                    <path fill-rule="evenodd"
+                        d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z" />
+                </svg>
+                Back
+            </a>
+        </div>
+    </nav>
+
+    <div class="container mx-0 px-0 mw-100 bg-body-secondary bg-opacity-50">
+        <div class="left-column vh-200 p-5 overflow-visible pt-5" style="margin-left: 20px; margin-right: 20px">
+            <div class="title fs-3 fw-bold pt-5">Full Report</div>
+
+            <div class="section mt-3">
+                <div class="sub-title fw-bold" style="margin-top: 20px">Title</div>
+
+                {% if report.title_size %}
+                <div
+                    class="report-box-success shadow mt-3 bg-body-tertiary rounded-3 d-flex flex-row p-0 overflow-hidden">
+                    <div class="left-ribbon mh-100 h-auto p-1 w-3 bg-success me-3 bg-opacity-75"></div>
+
+                    <div class="text my-3" style="font-family: 'Inter'; color: #676565">
+                        Manuscript title font size has been set correctly to 18pt
+                    </div>
+                    <div class="right-icon align-self-center ms-auto me-3 fs-4 text-success text-opacity-75">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor"
+                            class="bi bi-check-lg" viewBox="0 0 16 16">
+                            <path
+                                d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z" />
+                        </svg>
+                    </div>
+                </div>
+                {% else %}
+                <div
+                    class="report-box-success shadow mt-3 bg-body-tertiary rounded-3 d-flex flex-row p-0 overflow-hidden">
+                    <div class="left-ribbon mh-100 h-auto p-1 w-3 bg-danger me-3 bg-opacity-75"></div>
+
+                    <div class="text my-3" style="font-family: 'Inter'; color: #676565">
+                        Manuscript title font size does not match the 18pt requirement
+                    </div>
+                    <div class="right-icon align-self-center ms-auto me-3 fs-4 text-danger text-opacity-75">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                            class="bi bi-x" viewBox="0 0 14 16">
+                            <path
+                                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+                        </svg>
+                    </div>
+                </div>
+                {% endif %}
+                
+                {% if report.title_bold %}
+                <div
+                    class="report-box-success shadow mt-3 bg-body-tertiary rounded-3 d-flex flex-row p-0 overflow-hidden">
+                    <div class="left-ribbon mh-100 h-auto p-1 w-3 bg-success me-3 bg-opacity-75"></div>
+
+                    <div class="text my-3" style="font-family: 'Inter'; color: #676565">
+                        Manuscript title is bold
+                    </div>
+                    <div class="right-icon align-self-center ms-auto me-3 fs-4 text-success text-opacity-75">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor"
+                            class="bi bi-check-lg" viewBox="0 0 16 16">
+                            <path
+                                d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z" />
+                        </svg>
+                    </div>
+                </div>
+                {% else %}
+                <div
+                    class="report-box-success shadow mt-3 bg-body-tertiary rounded-3 d-flex flex-row p-0 overflow-hidden">
+                    <div class="left-ribbon mh-100 h-auto p-1 w-3 bg-danger me-3 bg-opacity-75"></div>
+
+                    <div class="text my-3" style="font-family: 'Inter'; color: #676565">
+                        Manuscript title is not bold
+                    </div>
+                    <div class="right-icon align-self-center ms-auto me-3 fs-4 text-danger text-opacity-75">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                            class="bi bi-x" viewBox="0 0 14 16">
+                            <path
+                                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+                        </svg>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+
+            <div class="section mt-3">
+                <div class="sub-title fw-bold" style="margin-top: 20px">Authors</div>
+                {% if report.author_size %}
+                <div
+                    class="report-box-success shadow mt-3 bg-body-tertiary rounded-3 d-flex flex-row p-0 overflow-hidden">
+                    <div class="left-ribbon mh-100 h-auto p-1 w-3 bg-success me-3 bg-opacity-75"></div>
+
+                    <div class="text my-3" style="font-family: 'Inter'; color: #676565">
+                        Manuscript author font size has been correctly set to 11pt
+                    </div>
+                    <div class="right-icon align-self-center ms-auto me-3 fs-4 text-success text-opacity-75">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor"
+                            class="bi bi-check-lg" viewBox="0 0 16 16">
+                            <path
+                                d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z" />
+                        </svg>
+                    </div>
+                </div>
+                {% else %}
+                <div
+                    class="report-box-success shadow mt-3 bg-body-tertiary rounded-3 d-flex flex-row p-0 overflow-hidden">
+                    <div class="left-ribbon mh-100 h-auto p-1 w-3 bg-danger me-3 bg-opacity-75"></div>
+
+                    <div class="text my-3" style="font-family: 'Inter'; color: #676565">
+                        Manuscript author size does not match the 11pt requirement
+                    </div>
+                    <div class="right-icon align-self-center ms-auto me-3 fs-4 text-danger text-opacity-75">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                            class="bi bi-x" viewBox="0 0 14 16">
+                            <path
+                                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+                        </svg>
+                    </div>
+                </div>
+                {% endif %} {% if report.author_bold %}
+                <div
+                    class="report-box-success shadow mt-3 bg-body-tertiary rounded-3 d-flex flex-row p-0 overflow-hidden">
+                    <div class="left-ribbon mh-100 h-auto p-1 w-3 bg-success me-3 bg-opacity-75"></div>
+
+                    <div class="text my-3" style="font-family: 'Inter'; color: #676565">
+                        Manuscript author is in bold
+                    </div>
+                    <div class="right-icon align-self-center ms-auto me-3 fs-4 text-success text-opacity-75">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor"
+                            class="bi bi-check-lg" viewBox="0 0 16 16">
+                            <path
+                                d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z" />
+                        </svg>
+                    </div>
+                </div>
+                {% else %}
+                <div
+                    class="report-box-success shadow mt-3 bg-body-tertiary rounded-3 d-flex flex-row p-0 overflow-hidden">
+                    <div class="left-ribbon mh-100 h-auto p-1 w-3 bg-danger me-3 bg-opacity-75"></div>
+
+                    <div class="text my-3" style="font-family: 'Inter'; color: #676565">
+                        Manuscript author is not bold
+                    </div>
+                    <div class="right-icon align-self-center ms-auto me-3 fs-4 text-danger text-opacity-75">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                            class="bi bi-x" viewBox="0 0 14 16">
+                            <path
+                                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+                        </svg>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+
+            <div class="section mt-3">
+                <div class="sub-title fw-bold" style="margin-top: 30px">Abstract</div>
+                {% if report.abs_background %}
+                <div
+                    class="report-box-success shadow mt-3 bg-body-tertiary rounded-3 d-flex flex-row p-0 overflow-hidden">
+                    <div class="left-ribbon mh-100 h-auto p-1 w-3 bg-success me-3 bg-opacity-75"></div>
+
+                    <div class="text my-3" style="font-family: 'Inter'; color: #676565">
+                        The manuscript has included a 'Background' subsection in the
+                        abstract.
+                    </div>
+                    <div class="right-icon align-self-center ms-auto me-3 fs-4 text-success text-opacity-75">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor"
+                            class="bi bi-check-lg" viewBox="0 0 16 16">
+                            <path
+                                d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z" />
+                        </svg>
+                    </div>
+                </div>
+                {% else %}
+                <div
+                    class="report-box-success shadow mt-3 bg-body-tertiary rounded-3 d-flex flex-row p-0 overflow-hidden">
+                    <div class="left-ribbon mh-100 h-auto p-1 w-3 bg-danger me-3 bg-opacity-75"></div>
+
+                    <div class="text my-3" style="font-family: 'Inter'; color: #676565">
+                        The manuscript does not include a 'Background' subsection in the
+                        abstract.
+                    </div>
+                    <div class="right-icon align-self-center ms-auto me-3 fs-4 text-danger text-opacity-75">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                            class="bi bi-x" viewBox="0 0 14 16">
+                            <path
+                                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+                        </svg>
+                    </div>
+                </div>
+                {% endif %} {% if report.abs_objectives %}
+                <div
+                    class="report-box-success shadow mt-3 bg-body-tertiary rounded-3 d-flex flex-row p-0 overflow-hidden">
+                    <div class="left-ribbon mh-100 h-auto p-1 w-3 bg-success me-3 bg-opacity-75"></div>
+
+                    <div class="text my-3" style="font-family: 'Inter'; color: #676565">
+                        The manuscript has included 'Objectives' subsection in the
+                        abstract.
+                    </div>
+                    <div class="right-icon align-self-center ms-auto me-3 fs-4 text-success text-opacity-75">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor"
+                            class="bi bi-check-lg" viewBox="0 0 16 16">
+                            <path
+                                d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z" />
+                        </svg>
+                    </div>
+                </div>
+                {% else %}
+                <div
+                    class="report-box-success shadow mt-3 bg-body-tertiary rounded-3 d-flex flex-row p-0 overflow-hidden">
+                    <div class="left-ribbon mh-100 h-auto p-1 w-3 bg-danger me-3 bg-opacity-75"></div>
+
+                    <div class="text my-3" style="font-family: 'Inter'; color: #676565">
+                        The manuscript does not included `Objectives` subsection in the
+                        abstract.
+                    </div>
+                    <div class="right-icon align-self-center ms-auto me-3 fs-4 text-danger text-opacity-75">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                            class="bi bi-x" viewBox="0 0 14 16">
+                            <path
+                                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+                        </svg>
+                    </div>
+                </div>
+                {% endif %} {% if report.abs_methods %}
+                <div
+                    class="report-box-success shadow mt-3 bg-body-tertiary rounded-3 d-flex flex-row p-0 overflow-hidden">
+                    <div class="left-ribbon mh-100 h-auto p-1 w-3 bg-success me-3 bg-opacity-75"></div>
+
+                    <div class="text my-3" style="font-family: 'Inter'; color: #676565">
+                        The manuscript has included 'Methods' subsection in the abstract.
+                    </div>
+                    <div class="right-icon align-self-center ms-auto me-3 fs-4 text-success text-opacity-75">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor"
+                            class="bi bi-check-lg" viewBox="0 0 16 16">
+                            <path
+                                d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z" />
+                        </svg>
+                    </div>
+                </div>
+                {% else %}
+                <div
+                    class="report-box-success shadow mt-3 bg-body-tertiary rounded-3 d-flex flex-row p-0 overflow-hidden">
+                    <div class="left-ribbon mh-100 h-auto p-1 w-3 bg-danger me-3 bg-opacity-75"></div>
+
+                    <div class="text my-3" style="font-family: 'Inter'; color: #676565">
+                        The manuscript does not included `Methods` subsection in the
+                        abstract.
+                    </div>
+                    <div class="right-icon align-self-center ms-auto me-3 fs-4 text-danger text-opacity-75">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                            class="bi bi-x" viewBox="0 0 14 16">
+                            <path
+                                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+                        </svg>
+                    </div>
+                </div>
+                {% endif %} {% if report.abs_result %}
+                <div
+                    class="report-box-success shadow mt-3 bg-body-tertiary rounded-3 d-flex flex-row p-0 overflow-hidden">
+                    <div class="left-ribbon mh-100 h-auto p-1 w-3 bg-success me-3 bg-opacity-75"></div>
+
+                    <div class="text my-3" style="font-family: 'Inter'; color: #676565">
+                        The manuscript has included 'Result' subsection in the abstract.
+                    </div>
+                    <div class="right-icon align-self-center ms-auto me-3 fs-4 text-success text-opacity-75">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor"
+                            class="bi bi-check-lg" viewBox="0 0 16 16">
+                            <path
+                                d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z" />
+                        </svg>
+                    </div>
+                </div>
+                {% else %}
+                <div
+                    class="report-box-success shadow mt-3 bg-body-tertiary rounded-3 d-flex flex-row p-0 overflow-hidden">
+                    <div class="left-ribbon mh-100 h-auto p-1 w-3 bg-danger me-3 bg-opacity-75"></div>
+
+                    <div class="text my-3" style="font-family: 'Inter'; color: #676565">
+                        The manuscript does not included `Result` subsection in the
+                        abstract.
+                    </div>
+                    <div class="right-icon align-self-center ms-auto me-3 fs-4 text-danger text-opacity-75">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                            class="bi bi-x" viewBox="0 0 14 16">
+                            <path
+                                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+                        </svg>
+                    </div>
+                </div>
+                {% endif %} {% if report.abs_conclusion %}
+                <div
+                    class="report-box-success shadow mt-3 bg-body-tertiary rounded-3 d-flex flex-row p-0 overflow-hidden">
+                    <div class="left-ribbon mh-100 h-auto p-1 w-3 bg-success me-3 bg-opacity-75"></div>
+
+                    <div class="text my-3" style="font-family: 'Inter'; color: #676565">
+                        The manuscript has included 'Conclusion' subsection in the
+                        abstract.
+                    </div>
+                    <div class="right-icon align-self-center ms-auto me-3 fs-4 text-success text-opacity-75">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor"
+                            class="bi bi-check-lg" viewBox="0 0 16 16">
+                            <path
+                                d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z" />
+                        </svg>
+                    </div>
+                </div>
+                {% else %}
+                <div
+                    class="report-box-success shadow mt-3 bg-body-tertiary rounded-3 d-flex flex-row p-0 overflow-hidden">
+                    <div class="left-ribbon mh-100 h-auto p-1 w-3 bg-danger me-3 bg-opacity-75"></div>
+
+                    <div class="text my-3" style="font-family: 'Inter'; color: #676565">
+                        The manuscript does not included `Conclusion` subsection in the
+                        abstract.
+                    </div>
+                    <div class="right-icon align-self-center ms-auto me-3 fs-4 text-danger text-opacity-75">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                            class="bi bi-x" viewBox="0 0 14 16">
+                            <path
+                                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+                        </svg>
+                    </div>
+                </div>
+                {% endif %} {% if report.abs_keywords %}
+                <div
+                    class="report-box-success shadow mt-3 bg-body-tertiary rounded-3 d-flex flex-row p-0 overflow-hidden">
+                    <div class="left-ribbon mh-100 h-auto p-1 w-3 bg-success me-3 bg-opacity-75"></div>
+
+                    <div class="text my-3" style="font-family: 'Inter'; color: #676565">
+                        The manuscript has included 'Keywords' subsection in the
+                        abstract.
+                    </div>
+                    <div class="right-icon align-self-center ms-auto me-3 fs-4 text-success text-opacity-75">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor"
+                            class="bi bi-check-lg" viewBox="0 0 16 16">
+                            <path
+                                d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z" />
+                        </svg>
+                    </div>
+                </div>
+                {% else %}
+                <div
+                    class="report-box-success shadow mt-3 bg-body-tertiary rounded-3 d-flex flex-row p-0 overflow-hidden">
+                    <div class="left-ribbon mh-100 h-auto p-1 w-3 bg-danger me-3 bg-opacity-75"></div>
+
+                    <div class="text my-3" style="font-family: 'Inter'; color: #676565">
+                        The manuscript does not included `Keywords` subsection in the
+                        abstract.
+                    </div>
+                    <div class="right-icon align-self-center ms-auto me-3 fs-4 text-danger text-opacity-75">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                            class="bi bi-x" viewBox="0 0 14 16">
+                            <path
+                                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+                        </svg>
+                    </div>
+                </div>
+                {% endif %} {% if report.abs_sequential %}
+                <div
+                    class="report-box-success shadow mt-3 bg-body-tertiary rounded-3 d-flex flex-row p-0 overflow-hidden">
+                    <div class="left-ribbon mh-100 h-auto p-1 w-3 bg-success me-3 bg-opacity-75"></div>
+
+                    <div class="text my-3" style="font-family: 'Inter'; color: #676565">
+                        The abstract subsections of the manuscript are in the correct
+                        order.
+                    </div>
+                    <div class="right-icon align-self-center ms-auto me-3 fs-4 text-success text-opacity-75">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor"
+                            class="bi bi-check-lg" viewBox="0 0 16 16">
+                            <path
+                                d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z" />
+                        </svg>
+                    </div>
+                </div>
+                {% else %}
+                <div
+                    class="report-box-success shadow mt-3 bg-body-tertiary rounded-3 d-flex flex-row p-0 overflow-hidden">
+                    <div class="left-ribbon mh-100 h-auto p-1 w-3 bg-danger me-3 bg-opacity-75"></div>
+
+                    <div class="text my-3" style="font-family: 'Inter'; color: #676565">
+                        The abstract subsections of the manuscript are not in the correct
+                        order.
+                    </div>
+                    <div class="right-icon align-self-center ms-auto me-3 fs-4 text-danger text-opacity-75">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                            class="bi bi-x" viewBox="0 0 14 16">
+                            <path
+                                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+                        </svg>
+                    </div>
+                </div>
+                {% endif %} 
+                {% if report.abs_keywords_count %}
+                <div
+                    class="report-box-success shadow mt-3 bg-body-tertiary rounded-3 d-flex flex-row p-0 overflow-hidden">
+                    <div class="left-ribbon mh-100 h-auto p-1 w-3 bg-success me-3 bg-opacity-75"></div>
+
+                    <div class="text my-3" style="font-family: 'Inter'; color: #676565">
+                        The number of keywords in the abstract of the manuscript has met the minimum requirement of 3 to a maximum of 6 words.
+                    </div>
+                    <div class="right-icon align-self-center ms-auto me-3 fs-4 text-success text-opacity-75">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor"
+                            class="bi bi-check-lg" viewBox="0 0 16 16">
+                            <path
+                                d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z" />
+                        </svg>
+                    </div>
+                </div>
+                {% else %}
+                <div
+                    class="report-box-success shadow mt-3 bg-body-tertiary rounded-3 d-flex flex-row p-0 overflow-hidden">
+                    <div class="left-ribbon mh-100 h-auto p-1 w-3 bg-danger me-3 bg-opacity-75"></div>
+
+                    <div class="text my-3" style="font-family: 'Inter'; color: #676565">
+                        The number of keywords in the abstract of the manuscript does not meet the minimum requirement of 3 to a maximum of 6 words.
+                    </div>
+                    <div class="right-icon align-self-center ms-auto me-3 fs-4 text-danger text-opacity-75">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                            class="bi bi-x" viewBox="0 0 14 16">
+                            <path
+                                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+                        </svg>
+                    </div>
+                </div>
+                {% endif %} {% if report.abs_words_count %}
+                <div
+                    class="report-box-success shadow mt-3 bg-body-tertiary rounded-3 d-flex flex-row p-0 overflow-hidden">
+                    <div class="left-ribbon mh-100 h-auto p-1 w-3 bg-success me-3 bg-opacity-75"></div>
+
+                    <div class="text my-3" style="font-family: 'Inter'; color: #676565">
+                        The number of words in the abstract of the manuscript has met the minimum requirement of 150 to a maximum of 300 words
+                    </div>
+                    <div class="right-icon align-self-center ms-auto me-3 fs-4 text-success text-opacity-75">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor"
+                            class="bi bi-check-lg" viewBox="0 0 16 16">
+                            <path
+                                d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z" />
+                        </svg>
+                    </div>
+                </div>
+                {% else %}
+                <div
+                    class="report-box-success shadow mt-3 bg-body-tertiary rounded-3 d-flex flex-row p-0 overflow-hidden">
+                    <div class="left-ribbon mh-100 h-auto p-1 w-3 bg-danger me-3 bg-opacity-75"></div>
+
+                    <div class="text my-3" style="font-family: 'Inter'; color: #676565">
+                        The number of words in the abstract of the manuscript does not meet the minimum requirement of 150 to a maximum of 300 words.
+                    </div>
+                    <div class="right-icon align-self-center ms-auto me-3 fs-4 text-danger text-opacity-75">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                            class="bi bi-x" viewBox="0 0 14 16">
+                            <path
+                                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+                        </svg>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+
+            <div class="section mt-3">
+                <div class="sub-title fw-bold" style="margin-top: 20px">
+                    Structure
+                </div>
+
+                {% if report.str_header_1_format %}
+                <div
+                    class="report-box-success shadow mt-3 bg-body-tertiary rounded-3 d-flex flex-row p-0 overflow-hidden">
+                    <div class="left-ribbon mh-100 h-auto p-1 w-3 bg-success me-3 bg-opacity-75">
+
+                    </div>
+
+                    <div class="text my-3" style="font-family: 'Inter'; color: #676565">
+                        The first page header displays JISEBI information in accordance with the template.
+                    </div>
+                    <div class="right-icon align-self-center ms-auto me-3 fs-4 text-success text-opacity-75">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor"
+                            class="bi bi-check-lg" viewBox="0 0 16 16">
+                            <path
+                                d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z" />
+                        </svg>
+                    </div>
+                </div>
+                {% else %}
+                <div
+                    class="report-box-success shadow mt-3 bg-body-tertiary rounded-3 d-flex flex-row p-0 overflow-hidden">
+                    <div class="left-ribbon mh-100 h-auto p-1 w-3 bg-danger me-3 bg-opacity-75">
+
+                    </div>
+
+                    <div class="text my-3" style="font-family: 'Inter'; color: #676565">
+                        The first page header does not display JISEBI information in accordance with the template.
+                    </div>
+                    <div class="right-icon align-self-center ms-auto me-3 fs-4 text-danger text-opacity-75">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                            class="bi bi-x" viewBox="0 0 14 16">
+                            <path
+                                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+                        </svg>
+                    </div>
+                </div>
+                {% endif %}
+
+                {% if report.str_header_1_fsizetitle %}
+                <div
+                    class="report-box-success shadow mt-3 bg-body-tertiary rounded-3 d-flex flex-row p-0 overflow-hidden">
+                    <div class="left-ribbon mh-100 h-auto p-1 w-3 bg-success me-3 bg-opacity-75">
+
+                    </div>
+
+                    <div class="text my-3" style="font-family: 'Inter'; color: #676565">
+                        The manuscript title font size in the first page header is in 14pt.
+                    </div>
+                    <div class="right-icon align-self-center ms-auto me-3 fs-4 text-success text-opacity-75">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor"
+                            class="bi bi-check-lg" viewBox="0 0 16 16">
+                            <path
+                                d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z" />
+                        </svg>
+                    </div>
+                </div>
+                {% else %}
+                <div
+                    class="report-box-success shadow mt-3 bg-body-tertiary rounded-3 d-flex flex-row p-0 overflow-hidden">
+                    <div class="left-ribbon mh-100 h-auto p-1 w-3 bg-danger me-3 bg-opacity-75">
+
+                    </div>
+
+                    <div class="text my-3" style="font-family: 'Inter'; color: #676565">
+                        The manuscript title font size in the first page header is not in 14pt.
+                    </div>
+                    <div class="right-icon align-self-center ms-auto me-3 fs-4 text-danger text-opacity-75">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                            class="bi bi-x" viewBox="0 0 14 16">
+                            <path
+                                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+                        </svg>
+                    </div>
+                </div>
+                {% endif %}
+
+                {% if report.str_header_1_fsizedetails %}
+                <div
+                    class="report-box-success shadow mt-3 bg-body-tertiary rounded-3 d-flex flex-row p-0 overflow-hidden">
+                    <div class="left-ribbon mh-100 h-auto p-1 w-3 bg-success me-3 bg-opacity-75">
+
+                    </div>
+
+                    <div class="text my-3" style="font-family: 'Inter'; color: #676565">
+                        The manuscript details font size in the first page header is in 8pt.
+                    </div>
+                    <div class="right-icon align-self-center ms-auto me-3 fs-4 text-success text-opacity-75">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor"
+                            class="bi bi-check-lg" viewBox="0 0 16 16">
+                            <path
+                                d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z" />
+                        </svg>
+                    </div>
+                </div>
+                {% else %}
+                <div
+                    class="report-box-success shadow mt-3 bg-body-tertiary rounded-3 d-flex flex-row p-0 overflow-hidden">
+                    <div class="left-ribbon mh-100 h-auto p-1 w-3 bg-danger me-3 bg-opacity-75">
+
+                    </div>
+
+                    <div class="text my-3" style="font-family: 'Inter'; color: #676565">
+                        The manuscript details font size in the first page header is not in 8pt.
+                    </div>
+                    <div class="right-icon align-self-center ms-auto me-3 fs-4 text-danger text-opacity-75">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                            class="bi bi-x" viewBox="0 0 14 16">
+                            <path
+                                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+                        </svg>
+                    </div>
+                </div>
+                {% endif %}
+
+                {% if report.str_header_reg_format %}
+                <div
+                    class="report-box-success shadow mt-3 bg-body-tertiary rounded-3 d-flex flex-row p-0 overflow-hidden">
+                    <div class="left-ribbon mh-100 h-auto p-1 w-3 bg-success me-3 bg-opacity-75">
+
+                    </div>
+
+                    <div class="text my-3" style="font-family: 'Inter'; color: #676565">
+                        The header of the next pages includes the author's name.
+                    </div>
+                    <div class="right-icon align-self-center ms-auto me-3 fs-4 text-success text-opacity-75">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor"
+                            class="bi bi-check-lg" viewBox="0 0 16 16">
+                            <path
+                                d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z" />
+                        </svg>
+                    </div>
+                </div>
+                {% else %}
+                <div
+                    class="report-box-success shadow mt-3 bg-body-tertiary rounded-3 d-flex flex-row p-0 overflow-hidden">
+                    <div class="left-ribbon mh-100 h-auto p-1 w-3 bg-danger me-3 bg-opacity-75">
+
+                    </div>
+
+                    <div class="text my-3" style="font-family: 'Inter'; color: #676565">
+                        The header of the next pages does not include the author's name.
+                    </div>
+                    <div class="right-icon align-self-center ms-auto me-3 fs-4 text-danger text-opacity-75">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                            class="bi bi-x" viewBox="0 0 14 16">
+                            <path
+                                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+                        </svg>
+                    </div>
+                </div>
+                {% endif %}
+
+                {% if report.str_header_reg_fsize %}
+                <div
+                    class="report-box-success shadow mt-3 bg-body-tertiary rounded-3 d-flex flex-row p-0 overflow-hidden">
+                    <div class="left-ribbon mh-100 h-auto p-1 w-3 bg-success me-3 bg-opacity-75">
+
+                    </div>
+                <div class="text my-3" style="font-family: 'Inter'; color: #676565">
+                    The header of the next pages uses a font size of 8pt.
+                </div>
+                <div class="right-icon align-self-center ms-auto me-3 fs-4 text-success text-opacity-75">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor"
+                        class="bi bi-check-lg" viewBox="0 0 16 16">
+                        <path
+                            d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z" />
+                    </svg>
+                </div>
+            </div>
+            {% else %}
+            <div
+                class="report-box-success shadow mt-3 bg-body-tertiary rounded-3 d-flex flex-row p-0 overflow-hidden">
+                <div class="left-ribbon mh-100 h-auto p-1 w-3 bg-danger me-3 bg-opacity-75">
+
+                </div>
+
+                <div class="text my-3" style="font-family: 'Inter'; color: #676565">
+                    The header of the next pages does not use 8pt font size.
+                </div>
+                <div class="right-icon align-self-center ms-auto me-3 fs-4 text-danger text-opacity-75">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                        class="bi bi-x" viewBox="0 0 14 16">
+                        <path
+                            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+                    </svg>
+                </div>
+            </div>
+            {% endif %}
+
+                {% if report.str_footer_1_format %}
+                <div
+                    class="report-box-success shadow mt-3 bg-body-tertiary rounded-3 d-flex flex-row p-0 overflow-hidden">
+                    <div class="left-ribbon mh-100 h-auto p-1 w-3 bg-success me-3 bg-opacity-75">
+
+                    </div>
+
+                    <div class="text my-3" style="font-family: 'Inter'; color: #676565">
+                        The first page footer displays copyright information in accordance with the template.
+                    </div>
+                    <div class="right-icon align-self-center ms-auto me-3 fs-4 text-success text-opacity-75">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor"
+                            class="bi bi-check-lg" viewBox="0 0 16 16">
+                            <path
+                                d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z" />
+                        </svg>
+                    </div>
+                </div>
+                {% else %}
+                <div
+                    class="report-box-success shadow mt-3 bg-body-tertiary rounded-3 d-flex flex-row p-0 overflow-hidden">
+                    <div class="left-ribbon mh-100 h-auto p-1 w-3 bg-danger me-3 bg-opacity-75">
+
+                    </div>
+
+                    <div class="text my-3" style="font-family: 'Inter'; color: #676565">
+                        The first page footer does not display copyright information in accordance with the template.
+                    </div>
+                    <div class="right-icon align-self-center ms-auto me-3 fs-4 text-danger text-opacity-75">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                            class="bi bi-x" viewBox="0 0 14 16">
+                            <path
+                                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+                        </svg>
+                    </div>
+                </div>
+                {% endif %}
+
+                {% if report.str_footer_1_fsize %}
+                <div
+                    class="report-box-success shadow mt-3 bg-body-tertiary rounded-3 d-flex flex-row p-0 overflow-hidden">
+                    <div class="left-ribbon mh-100 h-auto p-1 w-3 bg-success me-3 bg-opacity-75">
+
+                    </div>
+
+                    <div class="text my-3" style="font-family: 'Inter'; color: #676565">
+                        First page footer uses 8pt font size.
+                    </div>
+                    <div class="right-icon align-self-center ms-auto me-3 fs-4 text-success text-opacity-75">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor"
+                            class="bi bi-check-lg" viewBox="0 0 16 16">
+                            <path
+                                d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z" />
+                        </svg>
+                    </div>
+                </div>
+                {% else %}
+                <div
+                    class="report-box-success shadow mt-3 bg-body-tertiary rounded-3 d-flex flex-row p-0 overflow-hidden">
+                    <div class="left-ribbon mh-100 h-auto p-1 w-3 bg-danger me-3 bg-opacity-75">
+
+                    </div>
+
+                    <div class="text my-3" style="font-family: 'Inter'; color: #676565">
+                        First page footer does not use 8pt font size.
+                    </div>
+                    <div class="right-icon align-self-center ms-auto me-3 fs-4 text-danger text-opacity-75">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                            class="bi bi-x" viewBox="0 0 14 16">
+                            <path
+                                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+                        </svg>
+                    </div>
+                </div>
+                {% endif %}
+
+                {% if report.str_introduction %}
+                <div
+                    class="report-box-success shadow mt-3 bg-body-tertiary rounded-3 d-flex flex-row p-0 overflow-hidden">
+                    <div class="left-ribbon mh-100 h-auto p-1 w-3 bg-success me-3 bg-opacity-75">
+
+                    </div>
+
+                    <div class="text my-3" style="font-family: 'Inter'; color: #676565">
+                        There is a `Introduction` section.
+                    </div>
+                    <div class="right-icon align-self-center ms-auto me-3 fs-4 text-success text-opacity-75">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor"
+                            class="bi bi-check-lg" viewBox="0 0 16 16">
+                            <path
+                                d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z" />
+                        </svg>
+                    </div>
+                </div>
+                {% else %}
+                <div
+                    class="report-box-success shadow mt-3 bg-body-tertiary rounded-3 d-flex flex-row p-0 overflow-hidden">
+                    <div class="left-ribbon mh-100 h-auto p-1 w-3 bg-danger me-3 bg-opacity-75">
+
+                    </div>
+
+                    <div class="text my-3" style="font-family: 'Inter'; color: #676565">
+                        There is no `Introduction` section.
+                    </div>
+                    <div class="right-icon align-self-center ms-auto me-3 fs-4 text-danger text-opacity-75">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                            class="bi bi-x" viewBox="0 0 14 16">
+                            <path
+                                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+                        </svg>
+                    </div>
+                </div>
+                {% endif %}
+
+                {% if report.str_litrev %}
+                <div
+                    class="report-box-success shadow mt-3 bg-body-tertiary rounded-3 d-flex flex-row p-0 overflow-hidden">
+                    <div class="left-ribbon mh-100 h-auto p-1 w-3 bg-success me-3 bg-opacity-75">
+
+                    </div>
+
+                    <div class="text my-3" style="font-family: 'Inter'; color: #676565">
+                        There is a `Literature Review` section.
+                    </div>
+                    <div class="right-icon align-self-center ms-auto me-3 fs-4 text-success text-opacity-75">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor"
+                            class="bi bi-check-lg" viewBox="0 0 16 16">
+                            <path
+                                d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z" />
+                        </svg>
+                    </div>
+                </div>
+                {% else %}
+                <div
+                    class="report-box-success shadow mt-3 bg-body-tertiary rounded-3 d-flex flex-row p-0 overflow-hidden">
+                    <div class="left-ribbon mh-100 h-auto p-1 w-3 bg-danger me-3 bg-opacity-75">
+
+                    </div>
+
+                    <div class="text my-3" style="font-family: 'Inter'; color: #676565">
+                        There is no `Literature Review` section.
+                    </div>
+                    <div class="right-icon align-self-center ms-auto me-3 fs-4 text-danger text-opacity-75">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                            class="bi bi-x" viewBox="0 0 14 16">
+                            <path
+                                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+                        </svg>
+                    </div>
+                </div>
+                {% endif %}
+
+                {% if report.str_methods %}
+                <div
+                    class="report-box-success shadow mt-3 bg-body-tertiary rounded-3 d-flex flex-row p-0 overflow-hidden">
+                    <div class="left-ribbon mh-100 h-auto p-1 w-3 bg-success me-3 bg-opacity-75">
+
+                    </div>
+
+                    <div class="text my-3" style="font-family: 'Inter'; color: #676565">
+                        There is a `Methods` section
+                    </div>
+                    <div class="right-icon align-self-center ms-auto me-3 fs-4 text-success text-opacity-75">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor"
+                            class="bi bi-check-lg" viewBox="0 0 16 16">
+                            <path
+                                d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z" />
+                        </svg>
+                    </div>
+                </div>
+                {% else %}
+                <div
+                    class="report-box-success shadow mt-3 bg-body-tertiary rounded-3 d-flex flex-row p-0 overflow-hidden">
+                    <div class="left-ribbon mh-100 h-auto p-1 w-3 bg-danger me-3 bg-opacity-75">
+
+                    </div>
+
+                    <div class="text my-3" style="font-family: 'Inter'; color: #676565">
+                        There is no `Methods` section.
+                    </div>
+                    <div class="right-icon align-self-center ms-auto me-3 fs-4 text-danger text-opacity-75">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                            class="bi bi-x" viewBox="0 0 14 16">
+                            <path
+                                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+                        </svg>
+                    </div>
+                </div>
+                {% endif %}
+
+                {% if report.str_result %}
+                <div
+                    class="report-box-success shadow mt-3 bg-body-tertiary rounded-3 d-flex flex-row p-0 overflow-hidden">
+                    <div class="left-ribbon mh-100 h-auto p-1 w-3 bg-success me-3 bg-opacity-75">
+
+                    </div>
+
+                    <div class="text my-3" style="font-family: 'Inter'; color: #676565">
+                        There is a `Result` section.
+                    </div>
+                    <div class="right-icon align-self-center ms-auto me-3 fs-4 text-success text-opacity-75">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor"
+                            class="bi bi-check-lg" viewBox="0 0 16 16">
+                            <path
+                                d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z" />
+                        </svg>
+                    </div>
+                </div>
+                {% else %}
+                <div
+                    class="report-box-success shadow mt-3 bg-body-tertiary rounded-3 d-flex flex-row p-0 overflow-hidden">
+                    <div class="left-ribbon mh-100 h-auto p-1 w-3 bg-danger me-3 bg-opacity-75">
+
+                    </div>
+
+                    <div class="text my-3" style="font-family: 'Inter'; color: #676565">
+                        There is no `Result` section.
+                    </div>
+                    <div class="right-icon align-self-center ms-auto me-3 fs-4 text-danger text-opacity-75">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                            class="bi bi-x" viewBox="0 0 14 16">
+                            <path
+                                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+                        </svg>
+                    </div>
+                </div>
+                {% endif %}
+
+                {% if report.str_discussion %}
+                <div
+                    class="report-box-success shadow mt-3 bg-body-tertiary rounded-3 d-flex flex-row p-0 overflow-hidden">
+                    <div class="left-ribbon mh-100 h-auto p-1 w-3 bg-success me-3 bg-opacity-75">
+
+                    </div>
+
+                    <div class="text my-3" style="font-family: 'Inter'; color: #676565">
+                        There is a `Discussion` section.
+                    </div>
+                    <div class="right-icon align-self-center ms-auto me-3 fs-4 text-success text-opacity-75">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor"
+                            class="bi bi-check-lg" viewBox="0 0 16 16">
+                            <path
+                                d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z" />
+                        </svg>
+                    </div>
+                </div>
+                {% else %}
+                <div
+                    class="report-box-success shadow mt-3 bg-body-tertiary rounded-3 d-flex flex-row p-0 overflow-hidden">
+                    <div class="left-ribbon mh-100 h-auto p-1 w-3 bg-danger me-3 bg-opacity-75">
+
+                    </div>
+
+                    <div class="text my-3" style="font-family: 'Inter'; color: #676565">
+                        There is no `Discussion` section.
+                    </div>
+                    <div class="right-icon align-self-center ms-auto me-3 fs-4 text-danger text-opacity-75">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                            class="bi bi-x" viewBox="0 0 14 16">
+                            <path
+                                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+                        </svg>
+                    </div>
+                </div>
+                {% endif %}
+
+                {% if report.str_conclusion %}
+                <div
+                    class="report-box-success shadow mt-3 bg-body-tertiary rounded-3 d-flex flex-row p-0 overflow-hidden">
+                    <div class="left-ribbon mh-100 h-auto p-1 w-3 bg-success me-3 bg-opacity-75">
+
+                    </div>
+
+                    <div class="text my-3" style="font-family: 'Inter'; color: #676565">
+                        There is a `Conclusion` section.
+                    </div>
+                    <div class="right-icon align-self-center ms-auto me-3 fs-4 text-success text-opacity-75">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor"
+                            class="bi bi-check-lg" viewBox="0 0 16 16">
+                            <path
+                                d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z" />
+                        </svg>
+                    </div>
+                </div>
+                {% else %}
+                <div
+                    class="report-box-success shadow mt-3 bg-body-tertiary rounded-3 d-flex flex-row p-0 overflow-hidden">
+                    <div class="left-ribbon mh-100 h-auto p-1 w-3 bg-danger me-3 bg-opacity-75">
+
+                    </div>
+
+                    <div class="text my-3" style="font-family: 'Inter'; color: #676565">
+                        There is no `Conclusion` section.
+                    </div>
+                    <div class="right-icon align-self-center ms-auto me-3 fs-4 text-danger text-opacity-75">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                            class="bi bi-x" viewBox="0 0 14 16">
+                            <path
+                                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+                        </svg>
+                    </div>
+                </div>
+                {% endif %}
+
+                {% if report.str_sequential %}
+                <div
+                    class="report-box-success shadow mt-3 bg-body-tertiary rounded-3 d-flex flex-row p-0 overflow-hidden">
+                    <div class="left-ribbon mh-100 h-auto p-1 w-3 bg-success me-3 bg-opacity-75">
+
+                    </div>
+
+                    <div class="text my-3" style="font-family: 'Inter'; color: #676565">
+                        Sections are in the correct order.
+                    </div>
+                    <div class="right-icon align-self-center ms-auto me-3 fs-4 text-success text-opacity-75">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor"
+                            class="bi bi-check-lg" viewBox="0 0 16 16">
+                            <path
+                                d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z" />
+                        </svg>
+                    </div>
+                </div>
+                {% else %}
+                <div
+                    class="report-box-success shadow mt-3 bg-body-tertiary rounded-3 d-flex flex-row p-0 overflow-hidden">
+                    <div class="left-ribbon mh-100 h-auto p-1 w-3 bg-danger me-3 bg-opacity-75">
+
+                    </div>
+
+                    <div class="text my-3" style="font-family: 'Inter'; color: #676565">
+                        Sections are in the incorrect order.
+                    </div>
+                    <div class="right-icon align-self-center ms-auto me-3 fs-4 text-danger text-opacity-75">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                            class="bi bi-x" viewBox="0 0 14 16">
+                            <path
+                                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+                        </svg>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+
+            <div class="section mt-3">
+                <div class="sub-title fw-bold" style="margin-top: 30px;">
+                    Reference
+                </div>
+                {% if report.ref_format %}
+                <div
+                    class="report-box-success shadow mt-3 bg-body-tertiary rounded-3 d-flex flex-row p-0 overflow-hidden">
+                    <div class="left-ribbon mh-100 h-auto p-1 w-3 bg-success me-3 bg-opacity-75">
+
+                    </div>
+
+                    <div class="text my-3" style="font-family: 'Inter'; color: #676565">
+                        References in the correct format.
+                    </div>
+                    <div class="right-icon align-self-center ms-auto me-3 fs-4 text-success text-opacity-75">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor"
+                            class="bi bi-check-lg" viewBox="0 0 16 16">
+                            <path
+                                d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z" />
+                        </svg>
+                    </div>
+                </div>
+                {% else %}
+                <div
+                    class="report-box-success shadow mt-3 bg-body-tertiary rounded-3 d-flex flex-row p-0 overflow-hidden">
+                    <div class="left-ribbon mh-100 h-auto p-1 w-3 bg-danger me-3 bg-opacity-75">
+
+                    </div>
+
+                    <div class="text my-3" style="font-family: 'Inter'; color: #676565">
+                        Reference in the incorrect format.
+                    </div>
+                    <div class="right-icon align-self-center ms-auto me-3 fs-4 text-danger text-opacity-75">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                            class="bi bi-x" viewBox="0 0 14 16">
+                            <path
+                                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+                        </svg>
+                    </div>
+                </div>
+                {% endif %}
+
+                {% if report.ref_count %}
+                <div
+                    class="report-box-success shadow mt-3 bg-body-tertiary rounded-3 d-flex flex-row p-0 overflow-hidden">
+                    <div class="left-ribbon mh-100 h-auto p-1 w-3 bg-success me-3 bg-opacity-75">
+
+                    </div>
+
+                    <div class="text my-3" style="font-family: 'Inter'; color: #676565">
+                        Reference has more than 20 references.
+                    </div>
+                    <div class="right-icon align-self-center ms-auto me-3 fs-4 text-success text-opacity-75">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor"
+                            class="bi bi-check-lg" viewBox="0 0 16 16">
+                            <path
+                                d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z" />
+                        </svg>
+                    </div>
+                </div>
+                {% else %}
+                <div
+                    class="report-box-success shadow mt-3 bg-body-tertiary rounded-3 d-flex flex-row p-0 overflow-hidden">
+                    <div class="left-ribbon mh-100 h-auto p-1 w-3 bg-danger me-3 bg-opacity-75">
+
+                    </div>
+
+                    <div class="text my-3" style="font-family: 'Inter'; color: #676565">
+                        Not more than 20 references.
+                    </div>
+                    <div class="right-icon align-self-center ms-auto me-3 fs-4 text-danger text-opacity-75">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                            class="bi bi-x" viewBox="0 0 14 16">
+                            <path
+                                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+                        </svg>
+                    </div>
+                </div>
+                {% endif %}
+
+                {% if report.ref_used %}
+                <div
+                    class="report-box-success shadow mt-3 bg-body-tertiary rounded-3 d-flex flex-row p-0 overflow-hidden">
+                    <div class="left-ribbon mh-100 h-auto p-1 w-3 bg-success me-3 bg-opacity-75">
+
+                    </div>
+
+                    <div class="text my-3" style="font-family: 'Inter'; color: #676565">
+                        All references used.
+                    </div>
+                    <div class="right-icon align-self-center ms-auto me-3 fs-4 text-success text-opacity-75">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor"
+                            class="bi bi-check-lg" viewBox="0 0 16 16">
+                            <path
+                                d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z" />
+                        </svg>
+                    </div>
+                </div>
+                {% else %}
+                <div
+                    class="report-box-success shadow mt-3 bg-body-tertiary rounded-3 d-flex flex-row p-0 overflow-hidden">
+                    <div class="left-ribbon mh-100 h-auto p-1 w-3 bg-danger me-3 bg-opacity-75">
+
+                    </div>
+
+                    <div class="text my-3" style="font-family: 'Inter'; color: #676565">
+                        Not all references are used.
+                    </div>
+                    <div class="right-icon align-self-center ms-auto me-3 fs-4 text-danger text-opacity-75">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                            class="bi bi-x" viewBox="0 0 14 16">
+                            <path
+                                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+                        </svg>
+                    </div>
+                </div>
+                {% endif %}
+
+            </div>
+
+            <div class="section mt-3">
+                <div class="sub-title fw-bold" style="margin-top: 30px;">
+                    Addition
+                </div>
+                {% if report.add_table %}
+                <div
+                    class="report-box-success shadow mt-3 bg-body-tertiary rounded-3 d-flex flex-row p-0 overflow-hidden">
+                    <div class="left-ribbon mh-100 h-auto p-1 w-3 bg-success me-3 bg-opacity-75">
+
+                    </div>
+
+                    <div class="text my-3" style="font-family: 'Inter'; color: #676565">
+                        Table caption found.
+                    </div>
+                    <div class="right-icon align-self-center ms-auto me-3 fs-4 text-success text-opacity-75">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor"
+                            class="bi bi-check-lg" viewBox="0 0 16 16">
+                            <path
+                                d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z" />
+                        </svg>
+                    </div>
+                </div>
+                {% else %}
+                <div
+                    class="report-box-success shadow mt-3 bg-body-tertiary rounded-3 d-flex flex-row p-0 overflow-hidden">
+                    <div class="left-ribbon mh-100 h-auto p-1 w-3 bg-danger me-3 bg-opacity-75">
+
+                    </div>
+
+                    <div class="text my-3" style="font-family: 'Inter'; color: #676565">
+                        Table caption not found or incorrect.
+                    </div>
+                    <div class="right-icon align-self-center ms-auto me-3 fs-4 text-danger text-opacity-75">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                            class="bi bi-x" viewBox="0 0 14 16">
+                            <path
+                                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+                        </svg>
+                    </div>
+                </div>
+                {% endif %}
+
+                {% if report.add_figure %}
+                <div
+                    class="report-box-success shadow mt-3 bg-body-tertiary rounded-3 d-flex flex-row p-0 overflow-hidden">
+                    <div class="left-ribbon mh-100 h-auto p-1 w-3 bg-success me-3 bg-opacity-75">
+
+                    </div>
+
+                    <div class="text my-3" style="font-family: 'Inter'; color: #676565">
+                        Figure caption found.
+                    </div>
+                    <div class="right-icon align-self-center ms-auto me-3 fs-4 text-success text-opacity-75">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor"
+                            class="bi bi-check-lg" viewBox="0 0 16 16">
+                            <path
+                                d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z" />
+                        </svg>
+                    </div>
+                </div>
+                {% else %}
+                <div
+                    class="report-box-success shadow mt-3 bg-body-tertiary rounded-3 d-flex flex-row p-0 overflow-hidden">
+                    <div class="left-ribbon mh-100 h-auto p-1 w-3 bg-danger me-3 bg-opacity-75">
+
+                    </div>
+
+                    <div class="text my-3" style="font-family: 'Inter'; color: #676565">
+                        Figure caption not found or incorrect.
+                    </div>
+                    <div class="right-icon align-self-center ms-auto me-3 fs-4 text-danger text-opacity-75">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                            class="bi bi-x" viewBox="0 0 14 16">
+                            <path
+                                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+                        </svg>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+
+            <div>
+                <div>
+                    <div class="sub-title" style="
+                font-family: 'Poppins';
+                margin-top: 20px;
+                margin-bottom: 30px;
+                color: #898383;
+              ">
+                        Checking refers to JISEBI rules
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom-bar text-white py-2 text-center" style="
+        position: fixed;
+        bottom: 0;
+        height: 40px;
+        width: 100%;
+        background: #013999;
+      "></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,232 @@
+.navbar {
+    box-shadow: 0 4px 35px rgba(0, 0, 0, 0.25);
+    /* x y blur warna dengan alpha channel */
+    transition: top 0.3s ease-in-out, opacity 0.5s ease-in-out;
+    opacity: 1;
+    /* Mulai dengan opasitas penuh */
+}
+
+.navbar.hidden {
+    opacity: 0;
+}
+
+.navbar-brand {
+    margin-left: 50px;
+    font-weight: bold;
+    color: #0063FF;
+    margin-left: 10px;
+
+}
+
+.navbar-brand i {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.search-profile-container {
+    display: flex;
+    align-items: center;
+}
+
+.form {
+    margin-right: 10px;
+}
+
+
+.form-input[type="search"] {
+    border-color: #0063FF;
+    border-radius: 20px;
+    width: 350px;
+    margin-right: 0px;
+    text-indent: 33px;
+}
+
+.form-input[type="search"]::placeholder {
+    color: #0063FF;
+    width: 600px;
+}
+
+.form {
+    position: relative;
+}
+
+.form .fa-search {
+
+    position: absolute;
+    top: 12px;
+    left: 17px;
+    color: #0063FF;
+
+}
+
+.user-icon {
+    background-color: #0153D8;
+    color: #fff;
+    /* Warna ikon */
+    border-radius: 50%;
+    /* Untuk membuat lingkaran */
+    padding: 8px;
+    margin-left: 0px;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #0053D9, #002D7B);
+    color: white;
+    letter-spacing: 0.7px;
+}
+
+.container {
+    margin-top: 0px;
+    margin-bottom: 30px;
+}
+
+.h6 {
+    margin-bottom: 0;
+    color: #FFF;
+    font-weight: 200;
+}
+
+.btn#sub {
+    font-size: 16px;
+    font-weight: 600;
+    background-color: #fff;
+    color: #2C70DB;
+    width: auto;
+    height: 40px;
+}
+
+.btn#sub:hover {
+    background-color: #2C70DB;
+    color: #FFF;
+}
+
+
+.btn-lg,
+a:focus,
+a:active {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.card-1 {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    width: 81%;
+}
+
+.img-fluid {
+    margin: 0;
+}
+
+/*         
+p{
+            font-size: 13px ;
+} */
+
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.btn-round-lg {
+    border-radius: 22px;
+    color: #0063FF;
+    font-family: 'Inter', 'sans-serif';
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.9px;
+    border: 1px solid #fff;
+}
+
+.btn-round-lg:hover {
+    background-color: #fff;
+    color: #0063FF;
+    border: 1px solid #fff;
+}
+
+.btn-round-lg:focus {
+    border: 1px solid #fff !important;
+}
+
+.btn-outline-primary {
+    color: #0063FF;
+    /* Warna teks */
+    background-color: transparent;
+    /* Latar belakang transparan */
+    border-color: #0063FF;
+    /* Warna border biru */
+}
+
+.btn-outline-primary:hover {
+    color: #fff;
+    /* Warna teks saat hover */
+    background-color: #0063FF;
+    /* Latar belakang saat hover */
+}
+
+.btn-outline-primary:focus {
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    /* Efek focus saat tombol mendapatkan fokus */
+}
+
+.show-result-button {
+    margin-top: 10px;
+}
+
+.download-button {
+    margin-top: 10px;
+}
+
+
+.card {
+    background-color: #ffffff !important;
+    color: #0063FF;
+    border: none;
+    padding: 0px;
+    margin: 0px;
+
+}
+
+.card-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0px;
+    margin: 0px;
+    font-size: 19px;
+    font-family: 'Inter', 'san';
+}
+
+.wrapper {
+    max-width: 900px;
+    margin: 25px auto 30px auto;
+    padding-top: 20px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+}
+
+.wrapper-search {
+    max-width: 900px;
+    margin: 25px auto auto auto;
+    padding-top: 20px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+}
+
+.sticky-top {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    /* Optional: Atur nilai z-index agar navbar tampil di atas elemen lain */
+}
+
+label[for="sort"] {
+    color: white;
+}
+
+#sort {
+    border-radius: 10px;
+    /* Sesuaikan nilai border-radius sesuai keinginan Anda */
+}
